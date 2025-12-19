@@ -89,7 +89,7 @@ public class Runigram {
 		{
 			for (int j = 0; j < image[0].length; j++)
 			{
-				horizon[i][j] = image[i][image.length-j-1];
+				horizon[i][j] = image[i][image[0].length-j-1];
 			}
 		}
 		//// Replace the following statement with your code
@@ -153,7 +153,7 @@ public class Runigram {
 			int row = i * image.length / height;
 			for (int j = 0; j < width; j++)
 			{
-				int col = j * image[0].length; 
+				int col = j * image[0].length/width; 
 				scaled [i][j] = image[row][col];
 			}
 		}
@@ -207,6 +207,7 @@ public class Runigram {
 		{
 			double a = (double)(n-i)/n;
 			Color[][] morph = blend(source, Target, a);
+			Runigram.display(morph);
 			StdDraw.pause(500);
 		}
 	}
